@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Taman Kanak-Kanak Pirngadi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Pengaturan umum untuk seluruh halaman */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1, h2, h3 {
+      color: #2a9d8f;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Header */
+    header {
+      background-color: #2a9d8f;
+      color: white;
+      padding: 15px;
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+ 
+
+    nav ul {
+      display: flex;
+      justify-content: flex-end;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin: 0 20px;
+    }
+
+    .hero-content {
+      height: 53vh;
+    }
+
+    .atas {
+      margin: 10px;
+    }
+
+    h4 {
+      color: #f4f4f9;
+    }
+
+    nav ul li a {
+      font-weight: 600;
+      color: white;
+      transition: color 0.3s, transform 0.2s;
+    }
+
+    nav ul li a:hover {
+      color: #e76f51;
+      transform: scale(1.1);
+    }
+
+    nav ul li a:active {
+      color: #30e1bb;
+      transform: scale(0.9);
+    }
+
+    /* Menambahkan logo kiri dan kanan */
+    .logo-left, .logo-right {
+      position: absolute;
+      top: 10px;
+      width: 50px;
+   margin-top:5px;
+    }
+
+    .logo-left {
+      left: 10px;
+    }
+
+    .logo-right {
+      right: 10px;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('https://www.upload.ee/image/17622891/slider-1.jpg') no-repeat center center/cover;
+      animation: slideBackground 10s infinite alternate ease-in-out;
+      padding: 100px 0;
+      color: white;
+      text-align: center;
+      position: relative;
+    }
+
+    @keyframes slideBackground {
+      0% {
+        background: url('https://www.upload.ee/image/17622891/slider-1.jpg') no-repeat center center/cover;
+      }
+      50% {
+        background: url('https://www.upload.ee/image/17626871/Untitled_design.png') no-repeat center center/cover;
+      }
+      100% {
+        background: url('https://www.upload.ee/image/17626606/Untitled_design_20250114_112542_0000.png') no-repeat center center/cover;
+      }
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+
+    .btn-primary {
+      background-color: #e76f51;
+      padding: 10px 20px;
+      color: white;
+      border-radius: 5px;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 3vh;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+
+    .btn-primary:hover {
+      background-color: #198b73;
+    }
+
+    /* About Section */
+    .about {
+      padding: 50px 0;
+      background-color: #fff;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    .about h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      font-size: 1.5rem;
+      color: #555;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+
+    /* Features Section */
+    .features {
+      padding: 50px 0;
+      background-color: #e9f5f4;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: auto;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .features h2 {
+      font-size: 3rem;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+   
+    .feature-item {
+      text-align: center;
+      margin-bottom: 30px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      flex: 1 1 calc(33.333% - 40px);
+      max-width: calc(33.333% - 40px);
+    }
+
+    .features h3 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .features p {
+      font-size: 1.3rem;
+      color: #555;
+    }
+
+    /* Contact Section */
+    .contact {
+      padding: 50px 0;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .map-container {
+      height: 500px;
+      width: 65%;
+      max-width: 1200px;
+      border: 3px solid #2a9d8f;
+      border-radius: 10px;
+      align-items:left;
+      justify-content:left;
+      display:flex;
+      width:800px;
+      margin-left: 50px;
+    }
+
+    .contact h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .selamat {
+      color: #30e1bb;
+    }
+
+    .contact form {
+      display: flex;
+      flex-direction: column;
+      max-width: 600px;
+      width: 100%;
+    }
+
+    .contact input, .contact textarea {
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .contact button {
+      padding: 12px;
+      background-color: #2a9d8f;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .contact button:hover {
+      background-color: #e76f51;
+    }
+
+    .personal {
+  width: 35%;
+  padding: 20px;
+  height:500px;
+  background-color: #e9f5f4;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex:1;
+  margin-right:50px;
+  
+}
+.persona {
+  color: #2a9d8f;
+}
+.person {
+  color: #2a9d8f; font-weight: bold;
+}
+.contain{
+  display: flex; 
+    gap: 20px; 
+    flex-wrap: wrap;
+     justify-content: center; 
+     align-items: flex-start;
+}
+.link {
+  color: #e76f51; font-weight: bold;
+}
+
+    
+/* Card layout */
+.event {
+  text-align:center;
+}
+.event h2 {
+font-size: 3rem;
+margin-bottom: 10px;
+}
+.event-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.card img {
+  max-width: 100%;
+  height: 150px;
+  border-radius: 10px;
+}
+
+.card p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2a9d8f;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Popup Modal */
+.popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+}
+
+.popup-content h3 {
+  font-size: 2rem;
+  color: #2a9d8f;
+}
+
+.popup-content p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 2rem;
+  color: #e76f51;
+  cursor: pointer;
+}
+
+
+
+    /* Footer */
+    footer {
+      padding: 20px 0;
+      background-color: #2a9d8f;
+      color: white;
+      text-align: center;
+    }
+
+    footer .social-links a {
+      margin: 0 10px;
+      color: white;
+    }
+
+    footer .social-links a:hover {
+      color: #e76f51;
+    }
+
+    nav .menu {
+  list-style: none;
+  display: flex;
+}
+
+nav .menu li {
+  margin: 0 15px;
+}
+
+nav .menu li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+nav .hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+nav .hamburger .bar {
+  width: 30px;
+  height: 4px;
+  background-color: #fff;
+  margin: 6px 0;
+}
+
+
+    @media (max-width: 768px) {
+    
+  .map-container {
+    width: 90%;
+    height: 400px; /* Adjust the height to be a bit smaller for tablets */
+    margin:0 auto;
+  }
+
+  .contact h2 {
+    font-size: 2.5rem;
+  }
+
+  .contact form {
+    max-width: 80%;
+  }
+
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-item {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+h4 {
+  margin-top:20px;
+}
+  
+
+  .personal {
+    width: 90%;
+    margin-top: 20px;
+    margin-left:0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+/* bar */
+
+nav .menu {
+    display: none;
+    width: 100%;
+    text-align: center;
+   
+    top: 60px;
+    left: 0;
+    background-color: #2a9d8f;
+    padding: 10px 0;
+  }
+
+  nav .menu.active {
+    display: block;
+  }
+
+  nav .menu li {
+    margin: 10px 0;
+  }
+
+  nav .hamburger {
+    display: flex;
+  }
+
+    }
+
+    .close-menu {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 10px 15px;
+    background-color: #e76f51;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: none;
+    z-index: 1000;
+  
+    display:none;
+  }
+
+  .close-menu:hover {
+    background-color: #198b73;
+  }
+
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 50px 0;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+ 
+  .contact form {
+    max-width: 100%;
+  }
+
+  .personal {
+    width: 100%;
+    margin-left:0;
+  }
+  .map-container {
+    width: 100%;
+    height: 300px; /* Adjust further for mobile */
+  }
+
+  .contact h2 {
+    font-size: 2rem;
+  }
+}
+
+ 
+@media (max-width: 1024px) {
+  /* Adjust the container for tablet screens (iPads) */
+  .contain {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; /* Add space between elements */
+  }
+
+  /* Adjust the map container for better responsiveness */
+  .map-container {
+    width: 90%; /* Ensure it fits within the screen */
+    height: 400px; /* Adjust height for iPad */
+    margin: 0 auto; /* Center the map */
+  }
+
+  /* Adjust the personal contact container for better spacing */
+  .personal {
+    width: 90%; /* Make it occupy a larger portion */
+    margin-top: 20px; /* Add some space above */
+    margin-right:0;
+  }
+  .close-menu {
+display:none;
+
+ }
+  .contact h2 {
+    font-size: 2.5rem; /* Adjust the size of the header */
+  }
+
+  .contact form {
+    max-width: 80%; /* Adjust the form width */
+  }
+
+  /* Make sure personal contact content is centered */
+  .personal-contact {
+    margin-left: 0;
+    margin-top: 20px;
+    margin-right:0;
+  
+  }
+}
+@media (max-width: 1247px) {
+  .hero {
+    padding: 50px 0;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .close-menu {
+display:none;
+
+ }
+  .contact form {
+    max-width: 100%;
+  }
+
+  .personal {
+    width: 100%;
+    margin-left:0;
+    margin-right:0;
+height:230px;
+  }
+  .map-container {
+    width: 100%;
+    height: 400px; /* Adjust further for mobile */
+    margin-left:0;
+  }
+
+  .contact h2 {
+    font-size: 3.2rem;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav>
+        <ul id="menu" class="atas menu">
+          <li><a href="#about">Tentang Kami</a></li>
+          <li><a href="#features">Keunggulan</a></li>
+          <li><a href="#contact">Lokasi</a></li>
+          <li><a href="#acara">Informasi</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+        <button id="closeMenu" class="close-menu" >X</button>
+      </nav>
+      <img src="https://www.upload.ee/image/17622821/logo_pirngadi-removebg-preview.png" class="logo-right" alt="Logo Pirngadi 1">
+    </div>
+  </header>
+</section>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-content">
+      <h2 class="selamat">Selamat Datang di Taman Kanak-Kanak PIRNGADI</h2>
+      <h4>Tempat bermain dan belajar yang menyenangkan untuk anak-anak.</h4>
+      <a href="#" class="btn-primary">Lihat Selengkapnya</a>
+    </div>
+  </section>
+
+  
+ <!-- About Us -->
+ <section id="about" class="about">
+  <h2>Tentang Kami</h2>
+  <p>TK Pirngadi adalah taman kanak-kanak yang memberikan pengalaman belajar yang menyenangkan dan mendidik. Program kami berfokus pada kemandirian, kemampuan sosial, dan karakter unggul. Program ini dirancang untuk menstimulasi kreativitas dan perkembangan anak.</p>
+</section>
+
+  <!-- Features -->
+  <section id="features" class="features">
+    <h2>Keunggulan Kami</h2>
+    <div class="feature-item">
+      <h3>Pendidikan Berkualitas</h3>
+      <p>Kurikulum yang dirancang untuk memaksimalkan potensi anak-anak.</p>
+    </div>
+    <div class="feature-item">
+      <h3>Aktivitas Kreatif</h3>
+      <p>Kegiatan yang mendorong imajinasi dan kreativitas melalui seni dan kerajinan.</p>
+    </div>
+    <div class="feature-item">
+      <h3>Lingkungan yang Aman</h3>
+      <p>Fasilitas yang aman dan nyaman untuk anak-anak bermain dan belajar.</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <h2>Detail Lokasi</h2>
+    <div class="contain">
+      <!-- Map Container -->
+      <iframe class="map-container"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.4388837413263!2d112.7407467147736!3d-7.265649994731677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fbf9dd1f5dd7%3A0x8d6c09b2cb4c2852!2sJl.%20Pirngadi%20No.4%20-%206%2C%20Surabaya!5e0!3m2!1sen!2sid!4v1673333333333!5m2!1sen!2sid" 
+        allowfullscreen=""
+        loading="lazy;"
+        referrerpolicy="no-referrer-when-downgrade">
+      ></iframe>
+
+   
+      <!-- Personal Contact -->
+      <div class="personal" >
+        <h3 class="persona" >Hubungi Kami:</h3>
+        <p><strong>Alamat:</strong></p>
+        <p>TK Kristen Pirngadi<br>JL. Pirngadi No. 4-6 ,Kel. BUBUTAN, Kec. Bubutan, 60174, Surabaya</p>
+        <p><strong>Whatsapp:</strong></p>
+        <div class="person">
+        <p><a href="tel:+6281803977779">+62 818-0397-7779</p>
+        <p><strong>Email:</strong></p>
+        <p><a href="mailto:pgtk.kristenpirngadi.it@gmail.com">pgtk.kristenpirngadi.it@gmail.com</a></p>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+  <!-- Acara -->
+  <section id="acara" class="event">
+    <h2>Informasi Terkini</h2>
+    <div class="event-cards">
+      <div class="card" onclick="showPopup(1)">
+        <img src="https://www.upload.ee/image/17626955/Screenshot_2025-01-14_135538-removebg-preview.png" alt="Pirngadi Creative Future Fest">
+        <img src="https://www.upload.ee/image/17630289/flyer_1.png" alt="Pirngadi Creative Future Fest">
+        <p>Event Pirngadi Creative Future Fest</p>
+      </div>
+      <div class="card" onclick="showPopup(2)">
+        <img src="https://www.upload.ee/image/17630836/Free_Trial_9.png" alt="Free Trial Class">
+        <p>Free Trial Class</p>
+      </div>
+      <div class="card" onclick="showPopup(3)">
+        <img src="https://www.upload.ee/image/17630514/Screenshot_2025-01-15_131151.png" alt="Fasilitas">
+        <p>Fasilitas Mumpuni</p>
+      </div>
+    </div>
+    
+    <!-- Popup Modal -->
+    <div id="popup" class="popup-overlay">
+      <div class="popup-content">
+        <span class="close" onclick="hidePopup()">&times;</span>
+        <h3 id="popup-title">Title</h3>
+        <p id="popup-description">Description</p>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Taman Kanak-Kanak Pirngadi. Semua hak cipta dilindungi.</p>
+      <div class="social-links">
+        <a href="tel:+62 818-0397-7779">Telp: +6281803977779</a> | 
+        <a href="https://pirngadi.sch.id/">Website</a> |
+        <a href="https://www.instagram.com/paudmontessoripirngadi?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</a>  
+    
+      </div>
+    </div>
+  </footer>
+
+<script>
+  const eventDetails = [
+    {
+      title: "Pirngadi Creative Future Fest",
+      description: "Event kreatif untuk anak-anak dengan berbagai aktivitas menarik yang mendukung kreativitas dan edukasi."
+    },
+    {
+      title: "Free Trial Class",
+      description: "Coba gratis! Proses belajar dan bermain yang menyenangkan serta lingkungan yang aman dan nyaman dengan montessori."
+    },
+    {
+      title: "Fasilitas Mumpuni",
+      description: "Fasilitas Mumpuni, namun dengan harga terjangkau hanya di TK Pirngadi"
+    }
+  ];
+  
+  function showPopup(index) {
+    const popup = document.getElementById("popup");
+    const title = document.getElementById("popup-title");
+    const description = document.getElementById("popup-description");
+  
+    title.textContent = eventDetails[index - 1].title;
+    description.textContent = eventDetails[index - 1].description;
+  
+    popup.style.display = "flex";
+  }
+  
+  function hidePopup() {
+    const popup = document.getElementById("popup");
+    popup.style.display = "none";
+  }
+
+// Get the hamburger icon and the menu
+const hamburger = document.getElementById("hamburger");
+  const closeMenu = document.getElementById("closeMenu");
+  const menu = document.querySelector(".menu");
+
+  const openMenu = () => {
+    menu.classList.add("active");
+    hamburger.style.display = "none";
+    closeMenu.style.display = "block";
+  };
+
+  const closeMenuHandler = () => {
+    menu.classList.remove("active");
+    hamburger.style.display = "flex";
+    closeMenu.style.display = "none";
+  };
+
+  // Event listener untuk hamburger
+  hamburger.addEventListener("click", openMenu);
+  closeMenu.addEventListener("click", closeMenuHandler);
+
+  // Event listener untuk klik di luar menu
+  document.addEventListener("click", (event) => {
+    if (
+      !menu.contains(event.target) &&
+      !hamburger.contains(event.target) &&
+      menu.classList.contains("active")
+    ) {
+      closeMenuHandler();
+    }
+  });
+
+  // Event listener untuk perubahan ukuran layar
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) {
+      // Pada layar besar, sembunyikan hamburger dan tutup menu
+      menu.classList.remove("active");
+      hamburger.style.display = "none";
+      closeMenu.style.display = "none";
+    } else {
+      // Pada layar kecil, sesuaikan berdasarkan status menu
+      if (menu.classList.contains("active")) {
+        hamburger.style.display = "none"; // Jika menu terbuka, sembunyikan hamburger
+        closeMenu.style.display = "block"; // Tampilkan tombol tutup
+      } else {
+        hamburger.style.display = "flex"; // Jika menu tertutup, tampilkan hamburger
+        closeMenu.style.display = "none"; // Sembunyikan tombol tutup
+      }
+    }
+  });
+
+  // Inisialisasi awal berdasarkan ukuran layar
+  if (window.innerWidth > 768) {
+    hamburger.style.display = "none";
+    closeMenu.style.display = "none";
+  } else {
+    hamburger.style.display = "flex";
+  }
+  </script>
+  </body>
+
+  </html>
